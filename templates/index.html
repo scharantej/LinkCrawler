@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Google Document Link Crawler</title>
+</head>
+<body>
+<h1>Google Document Link Crawler</h1>
+<form action="/crawl_document" method="POST">
+<label for="document_link">Google Document Link:</label>
+<input type="text" id="document_link" name="document_link">
+<input type="submit" value="Crawl">
+</form>
+
+{% if links %}
+<h2>Extracted Links:</h2>
+<ul>
+{% for link in links %}
+<li><a href="{{ link }}">{{ link }}</a></li>
+{% endfor %}
+</ul>
+{% endif %}
+</body>
+</html>
+
